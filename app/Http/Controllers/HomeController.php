@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Events\sendCounter;
 use App\Events\sendSpecific;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -30,13 +31,13 @@ class HomeController extends Controller
 
     public function index2()
     {
-        
+        //dd(Auth::viaRemember());
         return view('home2');
     }
 
     public function sendC() {
         $rand_number = rand(0, 1000);
-        broadcast(new sendCounter($rand_number ))->toOthers();
+        broadcast(new sendCounter($rand_number ));//->toOthers();
 
     }
 

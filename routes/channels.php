@@ -17,15 +17,15 @@ Broadcast::channel('App.User.{id}', function ($user, $id) {
 });
 
 
-Broadcast::channel('test', function ($user) {
-    return $user;
-});
+// Broadcast::channel('test', function ($user) {
+//     return $user;
+// });
 
-Broadcast::channel('newtest', function ($user) {
-    return true;
-});
+// Broadcast::channel('newtest', function ($user) {
+//     return true;
+// });
 
 
-Broadcast::channel('user.{id}', function ($user, $id) {
-    return true;//(int) $user->id === (int) $id;
-});
+// Broadcast::channel('user.{id}', function ($user, $id) {
+//     return true;//(int) $user->id === (int) $id;
+// });

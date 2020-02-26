@@ -7,7 +7,9 @@
 
                     <div class="card-body">
                         I'm an example component.
+
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -37,7 +39,7 @@
             },
             listen() {
                 console.log('event listen');
-                Echo.private('newtest')
+                Echo.channel('newtest')
                     .listen('sendCounter', (eve) => {
                         console.log(eve);
                         
@@ -46,12 +48,11 @@
 
             listenToYours() {
                 console.log('event listen yours');
-                Echo.private('user.'+this.user.data.id)
-                    .listen('sendSpecific', (eve) => {
-                        console.log(eve);
-                    });
+                // Echo.private('user.'+this.user.data.id)
+                //     .listen('sendSpecific', (eve) => {
+                //         console.log(eve);
+                //     });
             }
         },
-
     }
 </script>
