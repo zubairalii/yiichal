@@ -48,10 +48,10 @@
 
             listenToYours() {
                 console.log('event listen yours');
-                // Echo.private('user.'+this.user.data.id)
-                //     .listen('sendSpecific', (eve) => {
-                //         console.log(eve);
-                //     });
+                 Echo.private('user.'+this.user.data.id)
+                     .listen('sendSpecific', (eve) => {
+                         console.log(eve);
+                     });
             }
         },
     }

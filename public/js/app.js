@@ -2025,10 +2025,10 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     listenToYours: function listenToYours() {
-      console.log('event listen yours'); // Echo.private('user.'+this.user.data.id)
-      //     .listen('sendSpecific', (eve) => {
-      //         console.log(eve);
-      //     });
+      console.log('event listen yours');
+      Echo["private"]('user.' + this.user.data.id).listen('sendSpecific', function (eve) {
+        console.log(eve);
+      });
     }
   }
 });
@@ -59659,7 +59659,7 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   wsHost: 'latestdesignplatform.breakoutedu.com',
   wsPort: 37496,
   wssPort: 37496,
-  authEndpoint: 'https://latestdesignplatform.breakoutedu.com/api/verif',
+  authEndpoint: 'https://websocket.breakoutedu.com/broadcasting/auth',
   auth: {
     headers: window.axios.defaults.headers.common
   },
@@ -59825,8 +59825,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/web-sockets/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/web-sockets/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/html/laravel-websockets/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/html/laravel-websockets/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

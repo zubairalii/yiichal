@@ -51,7 +51,7 @@ window.Echo = new Echo({
     wsHost: 'latestdesignplatform.breakoutedu.com',
     wsPort: 37496,
     wssPort: 37496,
-    authEndpoint: 'https://latestdesignplatform.breakoutedu.com/api/verif',
+    authEndpoint: 'https://websocket.breakoutedu.com/broadcasting/auth',
      auth: {
          headers: window.axios.defaults.headers.common
     },
