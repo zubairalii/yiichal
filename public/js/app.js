@@ -59648,8 +59648,10 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   broadcaster: 'pusher',
   key: 'myKey',
   wsHost: window.location.hostname,
-  wsPort: 6001,
-  disableStats: true
+  wsPort: 37496,
+  wssPort: 37496,
+  disableStats: true,
+  encrypted: true
 });
 
 /***/ }),
@@ -59810,8 +59812,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/web-sockets/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/web-sockets/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/html/laravel-websockets/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/html/laravel-websockets/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

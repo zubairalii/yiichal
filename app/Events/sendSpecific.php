@@ -33,7 +33,7 @@ class sendSpecific implements ShouldBroadcastNow
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('user.'.$this->id);
+        return new PrivateChannel('user.2');//.$this->id);
     }
 
     public function broadcastWith()

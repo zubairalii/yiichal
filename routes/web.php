@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+URL::forceScheme('https');
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,3 +30,7 @@ Route::get('/sendToSpecific/{id}', 'HomeController@sendS')->name('sendSpecific')
 Route::get('/getUserId', function() {
     return Auth::user()->toJson();
 });
+
+
+
+//Route::resource('/verif', 'testingController');

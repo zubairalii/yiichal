@@ -27,5 +27,6 @@ Broadcast::channel('newtest', function ($user) {
 
 
 Broadcast::channel('user.{id}', function ($user, $id) {
+//return ['STATUS' => 'OK'];
     return true;//(int) $user->id === (int) $id;
 });
