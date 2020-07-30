@@ -23,6 +23,12 @@ window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
+window.axios.defaults.headers.common = {
+    'X-CSRF-TOKEN': Laravel.csrfToken,
+    'X-Requested-With': 'XMLHttpRequest',
+    'Authorization': 'Bearer notvalidstring' //+ Laravel.apiToken,
+};
+
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
@@ -30,8 +36,14 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  */
 
 import Echo from 'laravel-echo';
+//import { hasMagic } from 'glob';
 
 window.Pusher = require('pusher-js');
+
+let token = document.head.querySelector('meta[name="csrf-token"]');
+//var token = 'asdfsadfasdfasdf';
+
+
 
 window.Echo = new Echo({
     broadcaster: 'pusher',
@@ -39,6 +51,14 @@ window.Echo = new Echo({
     wsHost: window.location.hostname,
     wsPort: 37496,
     wssPort: 37496,
+//    wsHost: 'latestdesignplatform.breakoutedu.com',
+//    wsPort: 37496,
+//    wssPort: 37496,
+//    authEndpoint: 'https://websocket.breakoutedu.com/broadcasting/auth',
+//     auth: {
+//         headers: window.axios.defaults.headers.common
+//    },
     disableStats: true,
     encrypted: true,
 });
+// Route::resource('/verif', 'testingController');

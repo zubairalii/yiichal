@@ -1938,19 +1938,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
-    console.log('Component mounted.'); // Echo.join(`test`)
-    // .here((users) => {
-    //     //
-    //     console.log('here');
-    // })
-    // .joining((user) => {
-    //     console.log('joining');
-    //     console.log(user.name);
-    // })
-    // .leaving((user) => {
-    //     console.log('leaving');
-    //     console.log(user.name);
-    // });
+    console.log('Component mounted.');
+    Echo.join("test").here(function (users) {
+      //
+      console.log('here');
+    }).joining(function (user) {
+      console.log('joining');
+      console.log(user.name);
+    }).leaving(function (user) {
+      console.log('leaving');
+      console.log(user.name);
+    });
   },
   methods: {
     sendNotification: function sendNotification() {
@@ -1997,6 +1995,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: {
     user: {}
@@ -2020,7 +2020,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     listen: function listen() {
       console.log('event listen');
-      Echo["private"]('newtest').listen('sendCounter', function (eve) {
+      Echo.channel('newtest').listen('sendCounter', function (eve) {
         console.log(eve);
       });
     },
@@ -47393,7 +47393,7 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("div", { staticClass: "card-body" }, [
               _vm._v(
-                "\n                    I'm an example component.\n                "
+                "\n                    I'm an example component.\n\n                "
               )
             ])
           ])
@@ -59636,14 +59636,23 @@ try {
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+window.axios.defaults.headers.common = {
+  'X-CSRF-TOKEN': Laravel.csrfToken,
+  'X-Requested-With': 'XMLHttpRequest',
+  'Authorization': 'Bearer notvalidstring' //+ Laravel.apiToken,
+
+};
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
  * allows your team to easily build robust real-time web applications.
  */
 
+ //import { hasMagic } from 'glob';
 
 window.Pusher = __webpack_require__(/*! pusher-js */ "./node_modules/pusher-js/dist/web/pusher.js");
+var token = document.head.querySelector('meta[name="csrf-token"]'); //var token = 'asdfsadfasdfasdf';
+
 window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   broadcaster: 'pusher',
   key: 'myKey',
@@ -59653,6 +59662,18 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   disableStats: true,
   encrypted: true
 });
+
+/*  wsHost: 'latestdesignplatform.breakoutedu.com',
+  wsPort: 37496,
+  wssPort: 37496,
+  authEndpoint: 'https://websocket.breakoutedu.com/broadcasting/auth',
+  auth: {
+    headers: window.axios.defaults.headers.common
+  },
+  disableStats: true,
+  encrypted: true
+}); // Route::resource('/verif', 'testingController');*/
+
 
 /***/ }),
 

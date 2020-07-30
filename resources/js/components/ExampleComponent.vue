@@ -31,20 +31,20 @@
         mounted() {
             console.log('Component mounted.');
             
-            // Echo.join(`test`)
-            // .here((users) => {
-            //     //
-            //     console.log('here');
-            // })
-            // .joining((user) => {
-            //     console.log('joining');
-            //     console.log(user.name);
+            Echo.join(`test`)
+            .here((users) => {
+                //
+                console.log('here');
+            })
+            .joining((user) => {
+                console.log('joining');
+                console.log(user.name);
                 
-            // })
-            // .leaving((user) => {
-            //     console.log('leaving');
-            //     console.log(user.name);
-            // });
+            })
+            .leaving((user) => {
+                console.log('leaving');
+                console.log(user.name);
+            });
         },
         methods: {
             sendNotification() {

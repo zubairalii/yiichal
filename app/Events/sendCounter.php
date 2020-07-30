@@ -33,7 +33,7 @@ class sendCounter implements ShouldBroadcastNow
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('newtest');
+        return new Channel('newtest');
     }
 
     public function broadcastWith()
